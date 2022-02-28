@@ -23,7 +23,7 @@ public class Workshop11Application {
 		List optVals = appArgs.getOptionValues("port");
 		logger.info("optVals > "+ optVals);
 		if (optVals == null || optVals.get(0) == null){
-			portNum = System.getProperty("PORT","3000");
+			portNum = System.getenv("PORT");
 		}else{
 			portNum = (String)optVals.get(0);
 		}
@@ -31,6 +31,7 @@ public class Workshop11Application {
 		if (portNum!=null){
 			app.setDefaultProperties(Collections.singletonMap("server.port",portNum));
 		}
+		
 		//SpringApplication.run(Workshop11Application.class, args);
 		
 		app.run(args);
