@@ -20,7 +20,7 @@ public class Workshop11Application {
 		String portNum = "3000";
 
 		DefaultApplicationArguments appArgs = new DefaultApplicationArguments(args);
-		List optVals = appArgs.getOptionValues("port");
+		List<String> optVals = appArgs.getOptionValues("port");
 		logger.info("optVals > "+ optVals);
 		if (optVals == null || optVals.get(0) == null){
 			portNum = System.getenv("PORT");
